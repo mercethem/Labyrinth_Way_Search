@@ -1,6 +1,9 @@
-import java.io.*;
-import java.util.*;
-import java.lang.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class Main {
     private static int dx;
@@ -43,9 +46,13 @@ public class Main {
             temp.add(i);
 
             for (int j = 0; j < arrayLabyrinth[0].length; j++) {
-                if (arrayLabyrinth[i][j] == 9){  j = Integer.MAX_VALUE-1; i = Integer.MAX_VALUE-1; break;}
-                if (arrayLabyrinth[i][j] == 1){
-                    System.out.printf("%s,%s ",i,j);
+                if (arrayLabyrinth[i][j] == 9) {
+                    j = Integer.MAX_VALUE - 1;
+                    i = Integer.MAX_VALUE - 1;
+                    break;
+                }
+                if (arrayLabyrinth[i][j] == 1) {
+                    System.out.printf("%s,%s ", i, j);
                     temp.add(j);
                 }
             }
@@ -67,7 +74,7 @@ public class Main {
 
             if (arrayLabyrinth[x][y] == 9) {
                 // Çıkış bulundu
-                System.out.println("LABİRET ÇÖZÜLDÜ!" + " \n" +"x : "+ x + " " + " y:  " + y);
+                System.out.println("LABİRET ÇÖZÜLDÜ!" + " \n" + "x : " + x + " " + " y:  " + y);
                 break;
             }
             for (int i = 0; i < 4; i++) {
@@ -86,13 +93,14 @@ public class Main {
                 if (arrayLabyrinth[i][j] == 1) {
                     System.out.print(" 1 ");
 
-                }
-                else if(arrayLabyrinth[i][j] == 9){
+                } else if (arrayLabyrinth[i][j] == 9) {
                     System.out.println(" 9 ");
+                } else {
+                    System.out.print("   ");
                 }
-                else {
-                    System.out.print("   ");} }
-            System.out.print("\n");}
+            }
+            System.out.print("\n");
+        }
     }
 }
 

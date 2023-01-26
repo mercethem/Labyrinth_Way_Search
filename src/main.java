@@ -15,7 +15,7 @@ public class main {
         ArrayList<Integer> dataList = new ArrayList<Integer>();
 
         try {
-            File readedFile = new File("E:\\Labyrinth\\src\\data.txt");
+            File readedFile = new File("E:\\Labyrinth\\src\\maps\\data2.txt");
             Scanner scan = new Scanner(readedFile);
             int i = 0;
             while (scan.hasNextLine()) {
@@ -26,16 +26,16 @@ public class main {
                         x = 1;
                     } else if (x == 48) {
                         x = 0;
-                    } else x = 9;
+                    }// else x = 9; //
                     dataList.add(x);
                     arrayLabyrinth[i][j] = x;
                 }
                 i++;
             }
             scan.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("LABİRENT ÇÖZÜMSÜZ!");
-            e.printStackTrace();
+        } catch (FileNotFoundException Unroad) {
+            System.out.println("Road Not Found!");
+            Unroad.printStackTrace();
         }
 
         Queue<Integer> qx = new LinkedList<>();
@@ -48,11 +48,10 @@ public class main {
             int x = qx.poll();
             int y = qy.poll();
 
-            if (arrayLabyrinth[x][y] == 9) {
-                // Çıkış bulundu
-                System.out.println("LABİRENT ÇÖZÜLDÜ!" + " \n" + "x : " + x + " " + " y:  " + y);
+           /* if (arrayLabyrinth[x][y] == 9) { //Can be adjustable finish the labyrinth
+                //System.out.println("Labyrinth Solved!" + " \n" + "x : " + x + " " + " y:  " + y); //Finish coordinate
                 break;
-            }
+            }*/
             for (int i = 0; i < 4; i++) {
                 int dx = x + xDirectory[i];
                 int dy = y + yDirectory[i];
@@ -68,9 +67,13 @@ public class main {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (arrayLabyrinth[i][j] == 1) {
-                    System.out.print(" 1 ");
-                } else if (arrayLabyrinth[i][j] == 9) {
-                    System.out.println(" 9 ");
+                    /* try { //Write duration
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    } */
+                    System.out.print(" O ");
+
                 } else {
                     System.out.print("   ");
                 }

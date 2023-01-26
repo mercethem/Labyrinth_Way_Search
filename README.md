@@ -3,6 +3,8 @@
 This project is about finding the ways inside of labyrinth.
 Takes map.txt from map folder.
 
+![ Alt text](Animation.gif)  [](Animation.gif)
+
 RULES
 
 -Map format has to be rectangle.

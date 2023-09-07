@@ -67,11 +67,11 @@ public class main {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (arrayLabyrinth[i][j] == 1) {
-                    /* try { //Write duration
-                        Thread.sleep(100);
+                    try { //Write duration
+                        Thread.sleep(0);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
-                    } */
+                    }
                     System.out.print(" O ");
 
                 } else {
